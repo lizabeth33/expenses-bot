@@ -15,9 +15,9 @@ from db import (
     add_to_balance,
 )
 
-BOT_TOKEN = "8034183723:AAHyzoaQYi0EDVBR61gXCO0sJbbW30aqdUI"
+import os
 
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher(storage=MemoryStorage())
 
 
@@ -217,4 +217,5 @@ async def main():
 
 
 if __name__ == "__main__":
+
     asyncio.run(main())
