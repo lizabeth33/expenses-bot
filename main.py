@@ -6,6 +6,7 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.storage.memory import MemoryStorage
 
+from config import BOT_TOKEN
 from db import (
     init_db,
     add_expense,
@@ -15,9 +16,7 @@ from db import (
     add_to_balance,
 )
 
-import os
-
-bot = Bot(token=os.getenv("BOT_TOKEN"))
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 
 
@@ -217,5 +216,4 @@ async def main():
 
 
 if __name__ == "__main__":
-
     asyncio.run(main())
